@@ -23,4 +23,7 @@ public abstract class Sortierer {
         return endZeit - startZeit;
      }
 
+     public List<Integer> get(int Index){
+     }
+
 }
