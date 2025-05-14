@@ -13,24 +13,26 @@ public class quickSortierer extends Sortierer {
 
         if(toSort.size() <= 1) return toSort;
 
-        int pivot = toSort.get(toSort.size()/2);
+        int pivot = toSort.remove(0);
 //        System.out.println("[DEBUG] Pivot: " + pivot);
-        List<Integer> less = new ArrayList<>(); //Elements smaller than pivot
-        List<Integer> greater = new ArrayList<>(); //Elements greater than pivot
-        List<Integer> equal = new ArrayList<>(); //Elements equal to pivot
+        List<Integer> ersteListe = new ArrayList<>();    // <= pivot
+        List<Integer> zweiteListe = new ArrayList<>();   // > pivot
+        List<Integer> sortierteListe = new ArrayList<>();
 
         //partitioning
-        for(int num : toSort) {
-            if (num < pivot) less.add(num);
-            else if (num > pivot) greater.add(num);
-            else equal.add(num);
+        for (int num : toSort) {
+            if (num <= pivot) {
+                ersteListe.add(num);
+            } else {
+                zweiteListe.add(num);
+            }
         }
 
-        List<Integer> sorted = new ArrayList<>();
-        sorted.addAll(sortiere(less));
-        sorted.addAll(equal);
-        sorted.addAll(sortiere(greater));
 
-        return sorted;
+        sortierteListe.addAll(sortiere(ersteListe));  // sortiere ersteListe
+        sortierteListe.add(pivot);                    // füge Pivot ein
+        sortierteListe.addAll(sortiere(zweiteListe)); // sortiere zweiteListe
+
+        return sortierteListe;
     }
 }
