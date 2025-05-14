@@ -17,11 +17,11 @@ public abstract class Sortierer {
 
     // Start and measuring time
     public List<Integer> sortiere(){
-        System.out.println("[DEBUG] Starting sort");
+//        System.out.println("[DEBUG] Starting sort");
         startZeit = System.currentTimeMillis();
         List<Integer> result = sortiere(liste);
         endZeit = System.currentTimeMillis();
-        System.out.println("[DEBUG] Finishing sort");
+//        System.out.println("[DEBUG] Finishing sort");
 
         return result;
     }

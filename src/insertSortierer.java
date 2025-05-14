@@ -1,6 +1,6 @@
 import java.util.List;
 
-public abstract class insertSortierer extends Sortierer {
+public class insertSortierer extends Sortierer {
 
 
     public insertSortierer(List<Integer> input) {
@@ -9,7 +9,7 @@ public abstract class insertSortierer extends Sortierer {
 
     @Override
     protected List<Integer> sortiere(List<Integer> toSort) {
-        System.out.println("[DEBUG] insertSortierer.sortiere");
+//        System.out.println("[DEBUG] insertSortierer.sortiere");
 
         // Loop over all elements, starting with the second
         for (int i = 1; i < toSort.size(); i++) {
@@ -23,7 +23,7 @@ public abstract class insertSortierer extends Sortierer {
             //Insert element at the correct position
             toSort.set(j + 1, key);
             //Debug every 100 steps
-            if(i%100 == 0) System.out.println("[DEBUG] insertSort progress: i=" + i);
+//            if(i%100 == 0) System.out.println("[DEBUG] insertSort progress: i=" + i);
         }
 
         return toSort;
