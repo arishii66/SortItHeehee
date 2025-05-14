@@ -11,6 +11,7 @@ public class Main {
             liste.add(randomYear);
         }
 
+        Ausgabe.liste(liste);
     }
 
 }
